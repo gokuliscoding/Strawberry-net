@@ -5,9 +5,10 @@ function navbar()
     
         <div>
             <span>
-                <input type="text" placeholder="SEARCH BRAND/PRODUCT" id="searchBar">
+                <input type="text" placeholder="SEARCH BRAND/PRODUCT" id="searchBar"/>
                 <button id="searchButton"><i class="fa fa-search" id="searchButtonIcon"></i></button>
             </span>
+            <div id="search_div"></div>
             <div id="textBelowSearchBar">
                 <span>
                     Natural Beauty<span id="textBelowSearchBar_Divider"></span>Estee Lauder<span

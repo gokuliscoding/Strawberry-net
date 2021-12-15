@@ -1,35 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Document</title>
-    
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</head>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
 
-<body>
-
-    <div id="container">
-
-    </div>
-
-</body>
-
+  <body>
+    <div id="container"></div>
+  </body>
 </html>
 
 <script type="module">
+  import navbar from "./components/navbar.js";
 
-import navbar from "./components/navbar.js"
+  let container = document.getElementById("container");
+  container.innerHTML = navbar;
 
-let container = document.getElementById("container")
-container.innerHTML = navbar;
-    
+  let searchButton = document.getElementById("searchButton");
+  searchButton.addEventListener("click", () => {
+    //Redirect to another page
+  });
+
+  //Debouncing part
+  let searchBar = document.getElementById("searchBar");
+  searchBar.addEventListener("keydown", fn);
+  searchBar.addEventListener("blur", () => {
+    let search_div = document.getElementById("search_div");
+    search_div.innerHTML = "";
+    search_div.style.height = "0px";
+  });
+  function fn() {
+    let searchBar = document.getElementById("searchBar");
+    let search_txt = searchBar.value;
+
+    let search_div = document.getElementById("search_div");
+    search_div.innerHTML = "";
+    search_div.style.height = "0px";
+    let data = JSON.parse(localStorage.getItem("data"));
+    if (data != null && data.length != 0) {
+      var arr = [];
+      data.forEach((item) => {
+        let txt = search_txt.toLowerCase();
+        let title = item.Title.toLowerCase();
+        if (title.indexOf(search_txt) != -1) {
+          arr.push(item);
+        }
+      });
+      if (arr.length != 0) {
+        let search_div = document.getElementById("search_div");
+        search_div.innerHTML = "";
+        arr.forEach((item) => {
+          let div = document.createElement("div");
+          div.innerHTML = item.Title;
+          div.setAttribute("id", "search_sub_div");
+          search_div.style.height = search_div.offsetHeight + 40 + "px";
+          search_div.append(div);
+        });
+      }
+    }
+  }
 </script>
