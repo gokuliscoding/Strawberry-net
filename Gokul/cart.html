@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+    <!--NavBar-->
+
+    <div id="navbarContainer">
+
+    </div>
+
+    <!--FlagModal Plus Form Start -->
+
+    <div id="megaContainer">
+        <div id="shopping_bag_title">
+            SHOPPING BAG
+        </div>
+    
+        <div id="deliverToAndForm">
+    
+            <div id="deliverTo">
+                <div id="deliverToText">
+                    <span id="flagModalTrigger">
+                        DELIVER TO:
+    
+                        <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg">
+                        India
+    
+                        <i class="fa fa-arrow-right"></i>
+    
+                    </span>
+                </div>
+    
+            </div>
+            
+            <div id="deliverToForm">
+                <div id="deliverToForm_topBox">
+                    <span id="deliverToForm_signIn">
+                      Sign In
+                    </span>
+                    <span id="deliverToForm_newHere">
+                        New Here?
+                    </span>
+                </div>
+
+                <div id="deliverToForm_Actual">
+                    <div id="deliverToForm_SignUp">
+                        <form action="" id="deliverToForm_SignUpForm">
+                            <div id="deliverToForm_SignUpForm_Email">
+                            <input type="text" placeholder="Email Address">
+                            </div>
+                            <div id="deliverToForm_SignUpForm_Password">
+                            <input type="text" placeholder="password">
+                            </div>
+
+                        <div id="forgotPassword">
+                            Forgot Password
+                        </div>
+
+                        <button id="deliverToFormSubmit">SIGN IN</button>
+
+                        <hr id="deliverToFormHR">
+
+                        <div id="deliverToForm_OR">
+                            OR
+                        </div>
+
+                        <div id="deliverToFormGuestCheckOut">
+                            Guest Checkout
+                        </div>
+
+                        <div id="deliverToFormGuestCheckOutInput">
+                            <form action="" id="deliverToForm_GuestCheckoutForm">
+                            <input type="text" placeholder="Email Address">
+                            <button id="deliverToForm_guestCheckOutSubmit">CONTINUE AS GUEST</button>
+
+                        </div>
+
+                        </form>
+                    </div>
+                </div>  
+
+            </div>
+    
+        </div>
+    
+        <div id="flagModal">
+            <div id="flagModalContent">
+                    <div id="flagModalTopBox">
+                        
+                        <input type="text" name="" id="flagModalSearch" placeholder="Search Region">
+                        <div id="flagModalCross">
+                            <i class="fa fa-close"></i>
+                        </div>
+                    </div>
+                    <div id="flagModalCountryBoxes">
+                        <div id="flagModalCountryBox">
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <!--FlagModal Plus Form End -->
+
+
+</body>
+
+</html>
+
+<script type="module">
+
+import navbar from "./components/navbar.js"
+
+let navbarContainer = document.getElementById("navbarContainer")
+    navbarContainer.innerHTML = navbar;
+
+
+
+</script>
+
+
+<script src="./scripts/flagModal.js"></script>
