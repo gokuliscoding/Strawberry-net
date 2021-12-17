@@ -87,3 +87,10 @@ li {
   margin-top: 3px;
   font-size: 17px;
 }
+
+#pro_img_2 {
+  transform: rotate(90deg);
+}
+#pro_img_3 {
+  transform: rotate(180deg);
+}
