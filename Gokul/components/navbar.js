@@ -43,7 +43,7 @@ function navbar()
         <div class="navMenu"><a href="#">HOME SCENTS</a></div>
         <div class="navMenu"><a href="#">NATURAL BEAUTY</a></div>
         <div class="navMenu"><a href="#">SPECIALS</a></div>
-        <div class="navMenu"><a href="#">NEW</a></div>
+        <div class="navMenu"><a href="#"><i class="fa fa-star"></i>NEW</a></div>
     </nav>`
 }
 
