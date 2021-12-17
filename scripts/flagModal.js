@@ -37,20 +37,37 @@ fetch(url)
 })
 .then(res=>{
     appendFlagAndCountryToModal(res.data)
-})
-
+});
+   let search_bar=document.getElementById("flagModalSearch");
+   search_bar.addEventListener("keydown",fn);
+   let main_data;
+   let search_txt=search_bar.value;
    let appendFlagAndCountryToModal = (data) => {
-    
-    data.forEach(({name,flag} = data) => {
+    main_data=data;
+   
+}
 
-        console.log(flag)
+function fn()
+{
+    let search_bar=document.getElementById("flagModalSearch");
+    let search_txt=search_bar.value;
+    flagModalCountryBox.innerHTML="";
+    let arr=[];
+    main_data.forEach(item => {
+        let txt = search_txt.toLowerCase();
+       let title = item.name.toLowerCase();
+        if (title.indexOf(search_txt) != -1) {
+          arr.push(item);
+        }
 
+    });
+
+    arr.forEach(({name,flag} = arr) => {
         let div = document.createElement("div")
         let flagName = document.createElement("h3")
         flagName.append(name)
-
+        console.log(name);
         div.append(flagName)
         flagModalCountryBox.append(div)
-    })
-
+    });
 }
