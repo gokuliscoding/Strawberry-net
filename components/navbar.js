@@ -5,26 +5,20 @@ function navbar()
     
         <div>
             <span>
-<<<<<<< Updated upstream:components/navbar.js
                 <input type="text" placeholder="SEARCH BRAND/PRODUCT" id="searchBar"/>
                 <button id="searchButton"><i class="fa fa-search" id="searchButtonIcon"></i></button>
             </span>
             <div id="search_div"></div>
-=======
                 <input type="text" placeholder="SEARCH BRAND/PRODUCT" id="searchBar">
                 <button id="searchButton"><i class="fa fa-search" id="searchButtonIcon"></i></button>
             </span>
->>>>>>> Stashed changes:Gokul/components/navbar.js
             <div id="textBelowSearchBar">
                 <span>
                     Natural Beauty<span id="textBelowSearchBar_Divider"></span>Estee Lauder<span
                         id="textBelowSearchBar_Divider"></span>Shiseido
                     <span id="textBelowSearchBar_Divider"></span>Double Serum
                 </span>
-<<<<<<< Updated upstream:components/navbar.js
-=======
                 <div id="search_div"></div>
->>>>>>> Stashed changes:Gokul/components/navbar.js
             </div>
         </div>
     
@@ -54,16 +48,8 @@ function navbar()
         <div class="navMenu"><a href="#">HOME SCENTS</a></div>
         <div class="navMenu"><a href="#">NATURAL BEAUTY</a></div>
         <div class="navMenu"><a href="#">SPECIALS</a></div>
-<<<<<<< Updated upstream:components/navbar.js
         <div class="navMenu"><a href="#">NEW</a></div>
     </nav>`
 }
 
 export default navbar();
-=======
-        <div class="navMenu"><a href="#"><i class="fa fa-star"></i>NEW</a></div>
-    </nav>`
-}
-
-export default navbar();
->>>>>>> Stashed changes:Gokul/components/navbar.js
