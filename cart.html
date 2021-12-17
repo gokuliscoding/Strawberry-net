@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="cart.css">
-    <link rel="stylesheet" href="navbar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
@@ -20,9 +19,7 @@
 
     <!--NavBar-->
 
-    <div id="navbarContainer">
-
-    </div>
+    <div id="container"></div>
 
     <!--FlagModal Plus Form Start -->
 
@@ -125,16 +122,77 @@
 
 </html>
 
-<script type="module">
-
-import navbar from "./components/navbar.js"
-
-let navbarContainer = document.getElementById("navbarContainer")
-    navbarContainer.innerHTML = navbar;
-
-
-
-</script>
-
-
 <script src="./scripts/flagModal.js"></script>
+
+<!-- --------------COPY THE ENTRIE BELOW CODE FOR NAVBAR------------------------ -->
+<script type="module">
+    import navbar from "./components/navbar.js";
+  
+    let container = document.getElementById("container");
+    container.innerHTML = navbar;
+  
+    let searchButton = document.getElementById("searchButton");
+    searchButton.addEventListener("click", () => {
+      //Redirect to another page
+    });
+  
+    //Debouncing part
+    let searchBar = document.getElementById("searchBar");
+    searchBar.addEventListener("keydown", fn);
+    //   searchBar.addEventListener("blur", () => {
+    //     let search_div = document.getElementById("search_div");
+    //     search_div.innerHTML = "";
+    //     search_div.style.height = "0px";
+    //   });
+  
+    function fn() {
+      let searchBar = document.getElementById("searchBar");
+      let search_txt = searchBar.value;
+  
+      let search_div = document.getElementById("search_div");
+      search_div.innerHTML = "";
+      search_div.style.height = "0px";
+      let data = JSON.parse(localStorage.getItem("data"));
+      if (data != null && data.length != 0) {
+        var arr = [];
+        data.forEach((item) => {
+          let txt = search_txt.toLowerCase();
+          let title = item.Title.toLowerCase();
+          if (title.indexOf(search_txt) != -1) {
+            arr.push(item);
+          }
+        });
+        if (arr.length != 0) {
+          let search_div = document.getElementById("search_div");
+          search_div.innerHTML = "";
+          arr.forEach((item, ind) => {
+            let div = document.createElement("div");
+            div.innerHTML = item.Title;
+            div.setAttribute("id", "search_sub_div");
+            div.addEventListener("click", function () {
+              // alert(this.innerHTML);
+              for (var i = 0; i < data.length; i++) {
+                if (data[i].Title == this.innerHTML) {
+                  localStorage.setItem(
+                    "currentlySearched",
+                    JSON.stringify(data[i])
+                  );
+                  break;
+                }
+              }
+              window.location.href = "ViewProduct.html";
+            });
+            search_div.style.height = search_div.offsetHeight + 40 + "px";
+            let size = search_div.offsetHeight;
+            if (size <= 150) {
+              search_div.style.overflowY = "unset";
+            } else {
+              search_div.style.overflowY = "scroll";
+            }
+            search_div.append(div);
+          });
+        }
+      }
+    }
+  </script>
+  

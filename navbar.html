@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="navbar.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,12 +22,13 @@
     <div id="container"></div>
   </body>
 </html>
-
+<!-- --------------COPY THE ENTRIE BELOW CODE FOR NAVBAR------------------------ -->
 <script type="module">
   import navbar from "./components/navbar.js";
 
   let container = document.getElementById("container");
   container.innerHTML = navbar;
+
   let searchButton = document.getElementById("searchButton");
   searchButton.addEventListener("click", () => {
     //Redirect to another page
@@ -37,11 +37,12 @@
   //Debouncing part
   let searchBar = document.getElementById("searchBar");
   searchBar.addEventListener("keydown", fn);
-  searchBar.addEventListener("blur", () => {
-    let search_div = document.getElementById("search_div");
-    search_div.innerHTML = "";
-    search_div.style.height = "0px";
-  });
+  //   searchBar.addEventListener("blur", () => {
+  //     let search_div = document.getElementById("search_div");
+  //     search_div.innerHTML = "";
+  //     search_div.style.height = "0px";
+  //   });
+
   function fn() {
     let searchBar = document.getElementById("searchBar");
     let search_txt = searchBar.value;
@@ -62,11 +63,23 @@
       if (arr.length != 0) {
         let search_div = document.getElementById("search_div");
         search_div.innerHTML = "";
-        arr.forEach((item) => {
+        arr.forEach((item, ind) => {
           let div = document.createElement("div");
           div.innerHTML = item.Title;
           div.setAttribute("id", "search_sub_div");
-
+          div.addEventListener("click", function () {
+            // alert(this.innerHTML);
+            for (var i = 0; i < data.length; i++) {
+              if (data[i].Title == this.innerHTML) {
+                localStorage.setItem(
+                  "currentlySearched",
+                  JSON.stringify(data[i])
+                );
+                break;
+              }
+            }
+            window.location.href = "ViewProduct.html";
+          });
           search_div.style.height = search_div.offsetHeight + 40 + "px";
           let size = search_div.offsetHeight;
           if (size <= 150) {

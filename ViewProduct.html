@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="ViewProduct.css" />
-    <script src="VIewProduct.js"></script>
+    <script src="ViewProduct.js"></script>
   </head>
   <body>
+    <div id="container"></div>
     <div id="main_container">
       <div id="left_box">
         <div>
           <img
-            class="lg_img"
+            class="lg_img" id="pro_img" 
             src="https://a.cdnsbn.com/images/products/23871389106.jpg"
             alt=""
           />
@@ -35,7 +36,7 @@
           </div>
           <div>
             <img
-              class="sm_img"
+              class="sm_img" 
               src="https://a.cdnsbn.com/images/products/msn/23871389106-2.jpg"
               alt=""
             />
@@ -43,18 +44,18 @@
         </div>
       </div>
       <div id="right_box">
-        <h1>BIOTHERM</h1>
+        <h1 id="brand">BIOTHERM</h1>
         <br />
-        <h3>Homme Toning Cleansing Gel (Normal Skin)</h3>
+        <h3 id="title">Homme Toning Cleansing Gel (Normal Skin)</h3>
         <br />
-        <p>Size : 150ml/5.07</p>
+        <p id="size_1">Size : 150ml/5.07</p>
         <br /><br />
-        <div class="size_box">
+        <div id="size_2" class="size_box">
           <br />
           <p>150ml / 5.07</p>
         </div>
         <br />
-        <p class="lg_txt">Rs 6,499</p>
+        <p class="lg_txt" id="price">Rs 6,499</p>
         <div id="bag_div">
           <div>
             <select name="" id="quantity">
@@ -69,16 +70,9 @@
           <div>
             <p id="detail_head">PRODUCT DETAILS</p>
             <ul>
-              <li>
-                Contains high content of mineral from Thermal Spring Water
+              <li id="details">
               </li>
-              <li>Enriched of multiple vitamins & beneficial ingredients</li>
-              <li>
-                Thoroughly removes dirt & impurities without drying out skin
-              </li>
-              <li>Leaves skin feeling clean, clear & clarified</li>
-              <li>Use before shaving to give a clean, close shave</li>
-              <li>Dermatologist tested</li>
+              
             </ul>
           </div>
         </div>
@@ -86,3 +80,74 @@
     </div>
   </body>
 </html>
+<!-- --------------COPY THE ENTRIE BELOW CODE FOR NAVBAR------------------------ -->
+<script type="module">
+  import navbar from "./components/navbar.js";
+
+  let container = document.getElementById("container");
+  container.innerHTML = navbar;
+
+  let searchButton = document.getElementById("searchButton");
+  searchButton.addEventListener("click", () => {
+    //Redirect to another page
+  });
+
+  //Debouncing part
+  let searchBar = document.getElementById("searchBar");
+  searchBar.addEventListener("keydown", fn);
+  //   searchBar.addEventListener("blur", () => {
+  //     let search_div = document.getElementById("search_div");
+  //     search_div.innerHTML = "";
+  //     search_div.style.height = "0px";
+  //   });
+
+  function fn() {
+    let searchBar = document.getElementById("searchBar");
+    let search_txt = searchBar.value;
+
+    let search_div = document.getElementById("search_div");
+    search_div.innerHTML = "";
+    search_div.style.height = "0px";
+    let data = JSON.parse(localStorage.getItem("data"));
+    if (data != null && data.length != 0) {
+      var arr = [];
+      data.forEach((item) => {
+        let txt = search_txt.toLowerCase();
+        let title = item.Title.toLowerCase();
+        if (title.indexOf(search_txt) != -1) {
+          arr.push(item);
+        }
+      });
+      if (arr.length != 0) {
+        let search_div = document.getElementById("search_div");
+        search_div.innerHTML = "";
+        arr.forEach((item, ind) => {
+          let div = document.createElement("div");
+          div.innerHTML = item.Title;
+          div.setAttribute("id", "search_sub_div");
+          div.addEventListener("click", function () {
+            // alert(this.innerHTML);
+            for (var i = 0; i < data.length; i++) {
+              if (data[i].Title == this.innerHTML) {
+                localStorage.setItem(
+                  "currentlySearched",
+                  JSON.stringify(data[i])
+                );
+                break;
+              }
+            }
+            window.location.href = "ViewProduct.html";
+          });
+          search_div.style.height = search_div.offsetHeight + 40 + "px";
+          let size = search_div.offsetHeight;
+          if (size <= 150) {
+            search_div.style.overflowY = "unset";
+          } else {
+            search_div.style.overflowY = "scroll";
+          }
+          search_div.append(div);
+        });
+      }
+    }
+  }
+</script>

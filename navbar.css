@@ -142,4 +142,5 @@ a:hover {
 #search_sub_div {
   padding: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  cursor: pointer;
 }

@@ -5,6 +5,7 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 #main_container {
+  margin-top: 12%;
   display: grid;
   grid-template-columns: auto auto;
   justify-content: center;
@@ -41,13 +42,10 @@ body {
 }
 .size_box {
   height: 70px;
-  width: 60px;
+  width: fit-content;
   padding: 8px;
   border: 2px solid purple;
   background-color: rgb(228, 227, 227);
-}
-.size_box > p {
-  word-wrap: break-word;
 }
 
 .lg_txt {

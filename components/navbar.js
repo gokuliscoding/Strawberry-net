@@ -1,6 +1,8 @@
 function navbar()
 {
-    return `<div id="cont">
+    return `
+    <link rel="stylesheet" href="navbar.css" />
+    <div id="cont">
         <img src="https://i.ibb.co/TYXhCMm/Logo.jpg">
     
         <div>
