@@ -66,7 +66,14 @@
           let div = document.createElement("div");
           div.innerHTML = item.Title;
           div.setAttribute("id", "search_sub_div");
+
           search_div.style.height = search_div.offsetHeight + 40 + "px";
+          let size = search_div.offsetHeight;
+          if (size <= 150) {
+            search_div.style.overflowY = "unset";
+          } else {
+            search_div.style.overflowY = "scroll";
+          }
           search_div.append(div);
         });
       }
