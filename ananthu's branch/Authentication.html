@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700,900" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="Authentication.css">
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Authentication</title>
 </head>
 
@@ -26,9 +24,9 @@
                 <div id="signin_cont_auth_newhere" onclick="newhereDisplay()">New Here?</div>
             </div>
             <div id="auth_input_contain">
-                <input id="auth_email" type="email" placeholder="Email address" onfocus="inputClick(event)"></input>
-                <input id="auth_pass" type="password" placeholder="Password" onfocus="inputClick(event)"></input>
-                <div id="auth_error"></div>
+                <input id="auth_email" type="email" placeholder="Email address" onfocus="inputClick(event)" autocomplete="off"></input>
+                <input id="auth_pass" type="password" placeholder="Password" onfocus="inputClick(event)" autocomplete="off"></input>
+                <div id="auth_error">Username and password do not match.</div>
             </div>
 
                 <div id="auth_Forgot_pass" onclick="forgotPass()">
@@ -47,22 +45,24 @@
             </div>
 
             <div id="newhere_input_contain">
-                <input type="text" placeholder="Enter Name" onfocus="inputClick(event)" id="name">
-                <input type="text" placeholder="Last Name" onfocus="inputClick(event)" id="lastname">
-                <input type="email" placeholder="Email address" onfocus="inputClick(event)" id="email">
+                <input type="text" placeholder="Enter Name" onfocus="inputClick(event)" id="name" autocomplete="off">
+                <input type="text" placeholder="Last Name" onfocus="inputClick(event)" id="lastname" autocomplete="off">
+                <input type="email" placeholder="Email address" onfocus="inputClick(event)" id="email" autocomplete="off">
                 <input type="password" placeholder="Password" onfocus="inputClick(event)" id="password">
             </div>
 
             <div id="pass_disclaim">Please enter a minimum of 8 characters, including at least 1 letter and 1 number.</div>
 
             <div id="reenter_pass">
-                <input type="password" placeholder="Re-enter your Password" onfocus="inputClick(event)" id="repassword">
+                <input type="text" placeholder="Re-enter your Password" onfocus="inputClick(event)" id="repassword" autocomplete="off">
+                <div id="repass_error">The passwords do not match.</div>
             </div>
 
-            <div class="g-recaptcha" data-sitekey="6LcLxaMdAAAAABc3M-ysZAeU871v3cLZJVo_b_ZZ"></div>
+            <div class="g-recaptcha"
+            data-sitekey="6LciFK0dAAAAAEUJFH7chUyNh3IBwfL1edKqPMIz" ></div>
 
             <div id="privacy_terms">By creating your account, you agree to our <br>
-                <a href="">Privacy Policy</a>&<a href="">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a> & <a href="#">Terms & Conditions</a>
             </div>
 
             <div id="email_subscribe">

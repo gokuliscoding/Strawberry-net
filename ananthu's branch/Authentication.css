@@ -17,6 +17,7 @@ body {
   overflow-x: hidden;
 }
 
+
 #signin_cont_auth_head,
 #newhere_auth_head {
   height: 53px;
@@ -57,7 +58,7 @@ body {
   margin-top: 15px;
 }
 
-#auth_error {
+#auth_error,#repass_error{
   display: none;
   color: red;
   font-size: 14px;
@@ -70,6 +71,7 @@ body {
   cursor: pointer;
   color: #623380;
   text-decoration: underline;
+  width: 110px;
 }
 
 #auth_signin_btn {
@@ -196,6 +198,10 @@ body {
 
 #newhere_auth_newhere {
   border-bottom: 0.181em solid #623380;
+}
+
+#forgot_pass_wrap{
+  display: none;
 }
 
 #forgot_pass_text {
