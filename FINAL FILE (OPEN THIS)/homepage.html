@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strawberry</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/f796e2f633.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- -----------------------footer--------------------------------- -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./navbar.css" />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: Lato, sans-serif;
+      }
+
+      #container {
+        width: 90%;
+        height: 5089px;
+        margin: auto;
+        margin-top: 200px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /*swiper file */
+      /* .swipermySwiper{
+          margin-top: 200px;
+        } */
+
+      .swiper {
+        width: 100%;
+        height: 400px;
+        object-fit: fill;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color: #000;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
+        position: relative;
+        z-index: 1;
+      }
+
+      .swiper-pagination {
+        top: 40px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* -------------------------------------- */
+      .c1 {
+        width: 100%;
+        height: 50px;
+        margin: auto;
+        margin-top: 100px;
+      }
+
+      .c2 {
+        width: 90%;
+        height: 50px;
+        margin: auto;
+        margin-top: 100px;
+      }
+
+      .h1 {
+        width: 32.8%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .t1 {
+        text-align: center;
+        padding: 7px;
+        position: relative;
+        top: -20px;
+        color: #2b2b2b;
+        letter-spacing: 4px;
+        font-weight: 300;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        width: 32.8%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .line {
+        width: 100%;
+        height: 5px;
+        background: black;
+      }
+
+      #products {
+        width: 100%;
+        /* height: 1285px; */
+        margin-top: 20px;
+        /* padding: 5px; */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(7, 1fr);
+        row-gap: 1px;
+        column-gap: 1px;
+      }
+
+      .content1 {
+        /* width: 270px; */
+        height: 640px;
+        padding: 5px;
+        padding-top: 10px;
+        cursor: pointer;
+      }
+
+      .content1:hover {
+        box-shadow: 3px 3px 3px 3px #b4b1b1;
+        -webkit-box-shadow: 3px 3px 3px 3px #b4b1b1;
+      }
+
+      .content1-img .data-image {
+        width: 100%;
+        height: 46%;
+        padding-top: 10px;
+      }
+
+      .des1 {
+        width: 55%;
+        height: 26px;
+        margin: auto;
+        background: #ee2c72;
+        text-align: center;
+      }
+
+      .des1 > p {
+        font-size: 12px;
+        font-weight: 700;
+        color: whitesmoke;
+        padding: 4px 0px;
+      }
+
+      .name .data-name {
+        width: 85%;
+        height: 50px;
+        margin-top: 10px;
+      }
+
+      .subhead {
+        font-size: 13px;
+        margin-top: -25px;
+        color: rgb(65, 59, 59);
+      }
+
+      .amount {
+        width: 85%;
+        height: 70px;
+        margin-top: 20px;
+      }
+
+      .save {
+        color: red;
+      }
+
+      .amt {
+        font-size: 25px;
+        font-weight: 700;
+        margin-top: 10px;
+      }
+
+      #addToCart {
+        width: 180px;
+        height: 90px;
+        position: relative;
+        left: 65px;
+        text-align: center;
+      }
+
+      .bag-btn {
+        border-radius: 4px;
+        padding: 5px;
+        width: 120px;
+        height: 35px;
+        font-weight: 700;
+        font-size: 17px;
+        color: whitesmoke;
+        background: #00a69c;
+        position: relative;
+        margin-bottom: 13px;
+        cursor: pointer;
+        outline: none;
+        border: none;
+      }
+
+      .subhead-btn {
+        font-size: 16px;
+        color: red;
+      }
+
+      .fav {
+        font-size: 26px;
+        cursor: pointer;
+        color: #623381;
+        position: relative;
+        left: 270px;
+        /* top: -30px; */
+      }
+
+      .fav:hover {
+        font-size: 26px;
+        cursor: pointer;
+        color: #623381;
+        position: relative;
+        left: 270px;
+        /* top: -230px; */
+        background-color: rgb(103, 103, 223);
+      }
+
+      .brands {
+        width: 100%;
+        height: 240px;
+        margin-top: 20px;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 1px;
+        column-gap: 1px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="nav_container"></div>
+    <div id="container">
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner1.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner2.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner3.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner4.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner5.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner6.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner7.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner8.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner9.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner10.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner11.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner12.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner13.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./swiper1img/banner14.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+
+      <!-- swiper script  -->
+      <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+      <!-- -------------------------------------------------------- -->
+
+      <div class="c1">
+        <div class="h1">
+          <hr class="line" />
+        </div>
+        <div class="h1 t1">
+          <h2>HOLIDAY HOLLY BUYS</h2>
+        </div>
+        <div class="h1">
+          <hr class="line" />
+        </div>
+      </div>
+
+      <!-- ---------------------------- products -------------------------------------------------------- -->
+
+      <div id="products">
+        <!-- RENDER PRODUCTS HERE  -->
+      </div>
+
+      <div class="c1">
+        <div class="h1">
+          <hr class="line" />
+        </div>
+        <div class="h1 t1">
+          <h2>TOP BRANDS</h2>
+        </div>
+        <div class="h1">
+          <hr class="line" />
+        </div>
+      </div>
+
+      <div class="brands">
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_YSL.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_ChristianDior.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_Lancome.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_Clarins.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_LaRochePosay.png"
+          alt=""
+        />
+
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_EsteeLauder.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_Moroccanoil.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_Shiseido.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_NARS.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_Clinique.png"
+          alt=""
+        />
+
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_bareMinerals.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_LauraMercier.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_Kerastase.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_JMO.png"
+          alt=""
+        />
+        <img
+          src="https://demo2020.strawberrynet.com/images/common/logo_Guerlain.png"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div id="footer_cont"></div>
+  </body>
+</html>
+
+<script type="module">
+  import { footer } from "./script/footer.js";
+  let footer_cont = document.getElementById("footer_cont");
+  footer_cont.innerHTML = footer();
+
+  //   import { navbar } from "./components/navbar.js";
+
+  //   let nav_container = document.getElementById("nav_container");
+  //   nav_container.innerHTML = navbar();
+
+  import navbar from "./components/navbar.js";
+  let container = document.getElementById("nav_container");
+  container.innerHTML = navbar;
+
+  let searchButton = document.getElementById("searchButton");
+  searchButton.addEventListener("click", () => {
+    //Redirect to another page
+  });
+
+  //Debouncing part
+  let searchBar = document.getElementById("searchBar");
+  searchBar.addEventListener("keydown", fn);
+  //   searchBar.addEventListener("blur", () => {
+  //     let search_div = document.getElementById("search_div");
+  //     search_div.innerHTML = "";
+  //     search_div.style.height = "0px";
+  //   });
+
+  let cont_1 = document.getElementById("container");
+  cont_1.addEventListener("click", function () {
+    let search_div = document.getElementById("search_div");
+    search_div.innerHTML = "";
+    search_div.style.height = "0px";
+  });
+  let cont_2 = document.getElementById("nav_container");
+  cont_2.addEventListener("click", function () {
+    let search_div = document.getElementById("search_div");
+    search_div.innerHTML = "";
+    search_div.style.height = "0px";
+  });
+  let signin_icon = document.getElementById("signin_icon");
+  signin_icon.addEventListener("click", function () {
+    window.location.href = "Authentication.html";
+  });
+  let bag_icon = document.getElementById("bag_icon");
+  bag_icon.addEventListener("click", function () {
+    window.location.href = "cart.html";
+  });
+  function fn() {
+    let searchBar = document.getElementById("searchBar");
+    let search_txt = searchBar.value;
+
+    let search_div = document.getElementById("search_div");
+    search_div.innerHTML = "";
+    search_div.style.height = "0px";
+    let data = JSON.parse(localStorage.getItem("data"));
+    if (data != null && data.length != 0) {
+      var arr = [];
+      data.forEach((item) => {
+        let txt = search_txt.toLowerCase();
+        let title = item.Title.toLowerCase();
+        if (title.indexOf(search_txt) != -1) {
+          arr.push(item);
+        }
+      });
+      if (arr.length != 0) {
+        let search_div = document.getElementById("search_div");
+        search_div.innerHTML = "";
+        arr.forEach((item, ind) => {
+          let div = document.createElement("div");
+          div.innerHTML = item.Title;
+          div.setAttribute("id", "search_sub_div");
+          div.addEventListener("click", function () {
+            // alert(this.innerHTML);
+            for (var i = 0; i < data.length; i++) {
+              if (data[i].Title == this.innerHTML) {
+                localStorage.setItem(
+                  "currentlySearched",
+                  JSON.stringify(data[i])
+                );
+                break;
+              }
+            }
+            window.location.href = "ViewProduct.html";
+          });
+          search_div.style.height = search_div.offsetHeight + 40 + "px";
+          let size = search_div.offsetHeight;
+          if (size <= 150) {
+            search_div.style.overflowY = "unset";
+          } else {
+            search_div.style.overflowY = "scroll";
+          }
+          search_div.append(div);
+        });
+      }
+    }
+  }
+
+  //  Initialize Swiper
+  var swiper = new Swiper(".mySwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + "</span>";
+      },
+    },
+  });
+</script>
+<script src="./script/products.js"></script>
+<script src="./script/app.js"></script>
+<!-- --------------COPY THE ENTRIE BELOW CODE FOR NAVBAR------------------------ -->
