@@ -6,6 +6,8 @@
 }
 footer{
     margin-top: 450px;
+    position: relative;
+    z-index: -1;
 }
 #footerContainer1 {
     background-image: url("https://a.cdnsbn.com/images/common/2016footer.jpg");
@@ -139,11 +141,17 @@ footer{
     margin: auto;
     height: 50px;
 }
+
+.fPart1>ul{
+    display: flex;
+}
+
 .fPart1 > ul > li > a {
     color: whitesmoke;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 14px;
     display: inline-block;
+    width: 250px;
 }
 .fPart1 > ul > li {
     list-style: none;
@@ -153,10 +161,14 @@ footer{
     border-right: 3px solid #ee2c72;
     padding-right: 25px;
     padding-top: 10px;
+    width:130px;
 }
-.con-cur {
-    margin-left: 235px;
+.con-cur{
+    margin-left: 200px;
+    border: 1px solid red;
 }
+
+
 .hr {
     margin-top: 40px;
     border: 2px solid #ee2c72; 
