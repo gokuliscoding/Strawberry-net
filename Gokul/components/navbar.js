@@ -14,12 +14,14 @@ function navbar()
                         id="textBelowSearchBar_Divider"></span>Shiseido
                     <span id="textBelowSearchBar_Divider"></span>Double Serum
                 </span>
+                  <div id="search_div"></div>
             </div>
         </div>
     
         <span style="display: inline-flex;" id="threeIconsInNavBar">
             <div id="signin_icon">
-                <i class="fa fa-user-circle" id="signin_icon"></i>
+                <i class="fa fa-user-circle" id="signinicon"></i>
+                <div id="userprofile"></div>
             </div>
             <div id="wishlist_icon">
                 <i class="fa fa-heart" id="wishlist_icon"></i>
@@ -44,7 +46,7 @@ function navbar()
         <div class="navMenu"><a href="#">NATURAL BEAUTY</a></div>
         <div class="navMenu"><a href="#">SPECIALS</a></div>
         <div class="navMenu"><a href="#"><i class="fa fa-star"></i>NEW</a></div>
-    </nav>`
+    </nav>`;
 }
 
 export  {navbar};

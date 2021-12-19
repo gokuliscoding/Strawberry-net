@@ -374,6 +374,21 @@
     let nav_container = document.getElementById("nav_container")
     nav_container.innerHTML = navbar();
 
+      //signed in user profile name for nav bar
+
+    let signin_icon=document.getElementById("signinicon")
+     signin_icon.addEventListener("click",signinDisplay)
+     let user = JSON.parse(localStorage.getItem("userProfile"))
+
+        let userprofile = document.getElementById("userprofile")
+        userprofile.textContent = user.username;
+    function signinDisplay(){
+
+      window.location.href="../ananthu's branch/Authentication.html"
+      
+    }
+
+    
     //  Initialize Swiper
     var swiper = new Swiper(".mySwiper", {
         pagination: {

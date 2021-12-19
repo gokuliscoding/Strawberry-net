@@ -331,6 +331,18 @@
     let navbarContainer = document.getElementById("navbarContainer")
     navbarContainer.innerHTML = navbar();
 
+     let signin_icon = document.getElementById("signinicon")
+        signin_icon.addEventListener("click", signinDisplay)
+        let user = JSON.parse(localStorage.getItem("userProfile"))
+
+        let userprofile = document.getElementById("userprofile")
+        userprofile.textContent = user.username;
+        function signinDisplay() {
+
+            window.location.href = "../ananthu's branch/Authentication.html"
+
+        }
+
 </script>
 
 

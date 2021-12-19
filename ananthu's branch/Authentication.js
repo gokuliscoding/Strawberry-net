@@ -92,7 +92,7 @@ let registerUser = async () => {
   console.log(data);
 
   if (data.error == false) {
-    window.location.href = "https://www.strawberrynet.com/en-in/main.aspx";
+    container.innerHTML = signin_cont.innerHTML;
   }
 };
 
@@ -119,9 +119,29 @@ let signinUser = async () => {
 
   let data = await res.json();
   console.log(data);
-  if (data.error == false) {
-    window.location.href = "https://www.strawberrynet.com/en-in/main.aspx";
-  } else {
-    auth_error.style["display"] = "block";
+
+  let token=data.token;
+ console.log( token)
+  
+  if (data.error == true) {
+        auth_error.style["display"] = "block";
+     
   }
+   else {
+    const getuser_url = `https://masai-api-mocker.herokuapp.com/user/${login_data.username}`;
+
+    let result = await fetch(getuser_url, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    let getuser_data = await result.json();
+    console.log(getuser_data);
+
+    localStorage.setItem("userProfile", JSON.stringify(getuser_data));
+    window.location.href = "../Home page and footer/homepage.html";
+  }
+ 
 };
