@@ -30,7 +30,9 @@ function navbar()
                 <i class="fa fa-heart" ></i>
             </div>
             <div id="bag_icon">
-                <i class="fa fa-shopping-bag" ></i>
+                <a href="cart.html">
+                <i class="fa fa-shopping-bag" id="bag_icon"></i>
+                </a>
             </div>
         </span>
     
